@@ -26,14 +26,16 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     disko.url = "github:nix-community/disko";
+    nixified-ai.url = "github:nixified-ai/flake";
   };
-  outputs = { nixpkgs, nixos-hardware, disko, ... }: {
+  outputs = { nixpkgs, nixos-hardware, disko, nixified-ai,  ... }: {
     nixosConfigurations.kac-machine = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
         nixos-hardware.nixosModules.common-cpu-intel
         nixos-hardware.nixosModules.common-pc-ssd
+        nixified-ai.nixosModules.comfyui
         disko.nixosModules.default
         ./configuration.nix
         ./disko.nix

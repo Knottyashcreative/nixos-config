@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  imports = [ ./open-webui.nix ];
+  imports = [ ./open-webui.nix ./comfyui ];
   nixpkgs.config.allowUnfree = true;
   hardware.nvidia.open = true;
   system.stateVersion = "25.05";
@@ -16,6 +16,7 @@
   btop
   exiftool
   ffmpeg-full
+  kdePackages.dolphin
   firefox
   gimp
   git
@@ -34,6 +35,17 @@
   wireshark
   wget
   whatsapp-for-linux
+  swaylock
+  swayidle
+  wl-clipboard
+  wf-recorder
+  mako # notification daemon
+  grim
+  #kanshi
+  slurp
+  vscodium
+  alacritty # Alacritty is the default terminal in the config
+  dmenu # Dmenu is the default in the config but i recommend wofi since its wayland nativ
   spotifyd
   yt-dlp
   (inkscape-with-extensions.override { inkscapeExtensions = [ inkscape-extensions.inkstitch ]; })
@@ -48,9 +60,7 @@
     algorithm = "zstd";
     memoryPercent = 90;
   };
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+#Disable Gnome for Sway
   nix.settings.trusted-users = [ "kac" "@wheel" "root" ];
   users.users.root.hashedPassword = "$y$j9T$AoL07JnG/cftMnUt7GXJo/$TuSzOYSLmS36IWTqd0dWltt1l2OjvJ.xzQE9MiOxB8A";
   users.users.kac = {
@@ -83,4 +93,9 @@
   services.tailscale.enable = true;
   boot.supportedFilesystems = [ "ntfs" ];#
   boot.blacklistedKernelModules = [ "ntfs3" ];
+
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true; # so that gtk works properly
+  };
 }
