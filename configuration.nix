@@ -57,7 +57,7 @@
     btop
     exiftool
     ffmpeg-full
-    kdePackages.dolphin
+    pcmanfm
     gimp
     git
     godot
