@@ -23,6 +23,7 @@
     #useDHCP = false;
     wireless = {
       networks.DoESLiverpool-5g.psk = "decafbad00";
+      networks.Virgin135535733br.psk = "decafbad00";
       enable = true;
       userControlled.enable = true;
       allowAuxiliaryImperativeNetworks = true;
