@@ -48,48 +48,51 @@
 
   # --- SYSTEM PACKAGES ---
   environment.systemPackages = with pkgs; [
-    ntfs3g
-    gnutar
-    xz
-    lrzip
-    lshw
-    parted
-    aria2
-    btop
-    exiftool
-    ffmpeg-full
-    pcmanfm
-    gimp
-    git
-    godot
-    kitty
-    krita
-    libreoffice
-    netflix
-    nvtopPackages.full
-    python313Packages.pymupdf
-    pandoc
-    poppler_utils
-    signal-desktop
-    tesseract
-    translate-shell
-    unoconv
-    vim
-    wireshark
-    wget
-    whatsapp-for-linux
-    swaylock
-    swayidle
-    wl-clipboard
-    wf-recorder
-    mako
-    grim
-    slurp
-    vscodium
-    alacritty
-    dmenu
-    spotifyd
-    yt-dlp
+alacritty # GPU-accelerated terminal emulator, fast and modern; kitty is also highly ranked for advanced features
+aria2 # Lightweight multi-protocol & multi-source command-line download utility
+btop # Resource monitor with a graphical interface, shows system stats
+dmenu # Dynamic menu for X, useful for launching applications; for Wayland, consider wofi or bemenu
+exiftool # Tool to read, write, and edit metadata in image files
+ffmpeg-full # Multimedia framework for video/audio processing and conversion
+gimp # Open source image editor, alternative to Photoshop; krita is better for digital painting
+git # Version control system for source code management
+gnutar # GNU tar archiving utility, standard for file archiving and compression
+godot # Open source game engine for 2D and 3D game development
+grim # Screenshot utility for Wayland; use with slurp for region selection
+joplin # Note-taking app with Markdown support, no native PDF annotation; Obsidian is more extensible, but Joplin is open source
+kitty # GPU-based terminal emulator, fast and feature-rich; alacritty is a good alternative for speed
+krita # Digital painting and illustration software, great for artists; gimp is better for photo editing
+libreoffice # Office suite including word processor, spreadsheet, and presentation tools; ONLYOFFICE is another option with better PDF editing
+lrzip # Long Range ZIP compression tool, good for very large files
+lshw # Hardware lister, provides detailed info about system hardware
+mako # Notification daemon for Wayland
+netflix # Streaming service app, for watching movies and TV shows; use web browser for best compatibility
+ntfs3g # NTFS filesystem driver for Linux, allows read/write access to NTFS partitions
+nvtopPackages.full # NVIDIA GPU monitoring tool, useful for performance tracking
+kdePackages.okular  # PDF viewer and annotator, highly recommended for NixOS; top-ranked PDF tool
+pandoc # Document converter supporting multiple formats
+parted # Disk partitioning tool, useful for managing disk partitions
+pcmanfm # Lightweight file manager, good for minimal setups; thunar is another popular choice
+poppler_utils # PDF utilities including text extraction and conversion
+psmisc
+python313Packages.pymupdf # Python bindings for MuPDF, useful for PDF manipulation
+signal-desktop # Secure messaging app with end-to-end encryption
+slurp # Selection tool for Wayland, often used with grim for screenshots
+spotifyd # Spotify client daemon for playing music; ncspot is a TUI alternative
+swayidle # Idle management daemon for Sway
+swaylock # Screen locker for Sway window manager
+tesseract # OCR (Optical Character Recognition) engine
+translate-shell # Command-line translator using various translation engines
+unoconv # Converts between different office document formats
+vim # Highly configurable text editor, popular among developers; neovim is a modern alternative
+vscodium # Open source build of Visual Studio Code; vscode (Microsoft) offers more extensions but is proprietary
+wf-recorder # Wayland screen recorder
+wget # Command-line utility for downloading files from the web; aria2 is more powerful for parallel downloads
+whatsapp-for-linux # Unofficial WhatsApp client for Linux; use web.whatsapp.com in browser for official support
+wireshark # Network protocol analyzer for troubleshooting and analysis
+wl-clipboard # Clipboard utilities for Wayland
+xz # Compression tool using LZMA2 algorithm, efficient for large files
+yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended for modern sites
     (inkscape-with-extensions.override { inkscapeExtensions = [ inkscape-extensions.inkstitch ]; })
   ];
 
