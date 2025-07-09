@@ -4,9 +4,9 @@
 #
 # Read `man 5 sway` for a complete reference.
 #Vulkan added as fails to boot into sway unless added on CLI
-#Exec=env WLR_RENDERER=vulkan sway --unsupported-gpu 
-export WLR_RENDERER=vulkan
-
+Exec=env WLR_RENDERER=vulkan sway --unsupported-gpu
+#use layout script
+exec_always --no-startup-id /etc/nixos/xconfigs/startup-layout.sh
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -34,24 +34,6 @@ output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_19
 
 # Start Sway (if not using a display manager)
 # sway --unsupported-gpu &
-
-# Workspace and layout setup
-swaymsg "workspace 1"
-swaymsg "exec firefox"
-swaymsg "split v"
-swaymsg "exec kitty" # Terminal
-swaymsg "split h"
-swaymsg "exec dolphin"
-swaymsg "move up"
-swaymsg "workspace 2"
-swaymsg "exec firefox"
-swaymsg "split v"
-swaymsg "exec kitty"
-swaymsg "workspace 1"
-swaymsg "exec joplin"
-swaymsg "[app_id=\"joplin\"] move scratchp
-
-
 ### Idle configuration
 #
 # Example configuration:
