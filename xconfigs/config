@@ -3,7 +3,7 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-#Vulcan added as fails to boot into sway unless added on CLI
+#Vulkan added as fails to boot into sway unless added on CLI
 Exec=env WLR_RENDERER=vulkan sway --unsupported-gpu 
 
 
