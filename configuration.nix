@@ -15,7 +15,7 @@
   system.stateVersion = "25.05";
   networking.hostName = "kac-machine";
 
-  systemd.network.enable = true;
+#  systemd.network.enable = true; ***this was recommened by boot up app as confusing
   services.resolved.enable = true;
 
   # --- NETWORK ---
