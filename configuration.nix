@@ -52,6 +52,7 @@
 alacritty # GPU-accelerated terminal emulator, fast and modern; kitty is also highly ranked for advanced features
 aria2 # Lightweight multi-protocol & multi-source command-line download utility
 btop # Resource monitor with a graphical interface, shows system stats
+blender
 dmenu # Dynamic menu for X, useful for launching applications; for Wayland, consider wofi or bemenu
 exiftool # Tool to read, write, and edit metadata in image files
 ffmpeg-full # Multimedia framework for video/audio processing and conversion
@@ -63,6 +64,7 @@ grim # Screenshot utility for Wayland; use with slurp for region selection
 joplin # Note-taking app with Markdown support, no native PDF annotation; Obsidian is more extensible, but Joplin is open source
 kitty # GPU-based terminal emulator, fast and feature-rich; alacritty is a good alternative for speed
 krita # Digital painting and illustration software, great for artists; gimp is better for photo editing
+kdePackages.dolphin
 libreoffice # Office suite including word processor, spreadsheet, and presentation tools; ONLYOFFICE is another option with better PDF editing
 lrzip # Long Range ZIP compression tool, good for very large files
 lshw # Hardware lister, provides detailed info about system hardware
