@@ -20,7 +20,7 @@
 
   # --- NETWORK ---
   networking = {
-    #useDHCP = false;
+    useDHCP = false;
     wireless = {
       networks.DoESLiverpool-5g.psk = "decafbad00";
       networks.Virgin135535733br.psk = "decafbad00";
@@ -29,6 +29,7 @@
       allowAuxiliaryImperativeNetworks = true;
     };
     #interfaces.wlo1.useDHCP = true;
+    interfaces.wlo1.useDHCP = true;
   };
 
   systemd.network.wait-online.enable = false;
@@ -99,6 +100,7 @@ brightnessctl
 playerctl
 wf-recorder # Wayland screen recorder
 wget # Command-line utility for downloading files from the web; aria2 is more powerful for parallel downloads
+wpa_supplicant_gui
 whatsapp-for-linux # Unofficial WhatsApp client for Linux; use web.whatsapp.com in browser for official support
 wireshark # Network protocol analyzer for troubleshooting and analysis
 wl-clipboard # Clipboard utilities for Wayland
@@ -123,6 +125,7 @@ yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended 
     du-files = "find . -maxdepth 1 -type f -exec du -h {} + | sort -rh";
     kit = "kitten icat";
     bt = "bluetoothctl";
+    wpa = "wpa_gui";
   };
 
   # --- NIX SETTINGS ---
