@@ -118,6 +118,7 @@ yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended 
   };
 
   programs.bash.shellAliases = {
+    sway = "WLR_RENDERER=vulkan exec sway --unsupported-gpu";
     lx = "l --sort=extension";
     cal = "cal -m";
     du-all = "du -ah --max-depth=1 . | sort -rh";
