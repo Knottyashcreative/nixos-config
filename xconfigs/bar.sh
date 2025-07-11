@@ -41,7 +41,7 @@ disk_usage=$(df -h / | awk 'NR==2 {print $3 "/" $2 " used"}')
 music=$(mpc current 2>/dev/null || echo "No music")
 
 # Output the status line
-echo "📆 $date_formatted | 🖥️ CPU: $cpu_usage | 🧠 Mem: $mem_usage | 🔋 $battery_percent% ($battery_status) | 🌐 IP: $ip_addr | 📶 WiFi: $wifi_strength | 🔊 Vol: $volume | ⏱️ $uptime | 💾 Disk: $disk_usage | 💡 Bright: $brightness | 🎵 $music"
+echo "📆 $date_formatted | 🖥️ CPU: $cpu_usage | 🧠 Mem: $mem_usage | 🌐 IP: $ip_addr | 📶 WiFi: $wifi_strength | 🔊 Vol: $volume | ⏱️ $uptime | 💾 Disk: $disk_usage | 🎵 $music"
 
 # --- Command Explanations ---
 # date_formatted: Current date and time in ETC/GMT-1 timezone.

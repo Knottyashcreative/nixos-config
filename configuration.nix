@@ -84,9 +84,19 @@ swaylock # Screen locker for Sway window manager
 tesseract # OCR (Optical Character Recognition) engine
 translate-shell # Command-line translator using various translation engines
 unoconv # Converts between different office document formats
-vim # Highly configurable text editor, popular among developers; neovim is a modern alternative
+vim_configurable # Highly configurable text editor, popular among developers; neovim is a modern alternative
 vscodium # Open source build of Visual Studio Code; vscode (Microsoft) offers more extensions but is proprietary
 waybar
+sway
+wofi
+foot
+emacs
+mpv
+mako
+wl-clipboard
+grim
+brightnessctl
+playerctl
 wf-recorder # Wayland screen recorder
 wget # Command-line utility for downloading files from the web; aria2 is more powerful for parallel downloads
 whatsapp-for-linux # Unofficial WhatsApp client for Linux; use web.whatsapp.com in browser for official support
@@ -99,7 +109,7 @@ yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended 
 
   # --- PROGRAMS ---
   programs.firefox.enable = true;
-
+  programs.vim.enable = true;
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
@@ -154,7 +164,7 @@ yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended 
   powerManagement.enable = true;
 
   # --- USERS ---
-  users.users.kac = {
+  users.users.kac = {  
     hashedPassword = "$y$j9T$AoL07JnG/cftMnUt7GXJo/$TuSzOYSLmS36IWTqd0dWltt1l2OjvJ.xzQE9MiOxB8A";
     isNormalUser = true;
     extraGroups = [
@@ -166,6 +176,8 @@ yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended 
       "pipewire"
     ];
   };
+  #auto login
+  security.sudo.wheelNeedsPassword = false;
   users.mutableUsers = false;
 
   # --- BOOT ---
