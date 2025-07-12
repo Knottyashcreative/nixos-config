@@ -11,11 +11,12 @@
   nixpkgs.config.allowUnfree = true;
   hardware.nvidia.open = true;
   hardware.enableRedistributableFirmware = true;
-
+#sway environment setting
+  environment.variables.WLR_RENDERER = "vulkan";
   system.stateVersion = "25.05";
   networking.hostName = "kac-machine";
 
-#  systemd.network.enable = true; ***this was recommened by boot up app as confusing
+#systemd.network.enable = true; ***this was recommened by boot up app as confusing
   services.resolved.enable = true;
 
   # --- NETWORK ---
@@ -92,7 +93,7 @@ vscodium # Open source build of Visual Studio Code; vscode (Microsoft) offers mo
 waybar
 sway
 wofi
-foot
+# foot outdated terminal
 emacs
 mpv
 mako
@@ -118,9 +119,9 @@ yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended 
     enable = true;
     wrapperFeatures.gtk = true;
   };
-
+  programs.sway.extraOptions = [ "--unsupported-gpu --config=${./xconfigs/config}"];
   programs.bash.shellAliases = {
-    sway = "WLR_RENDERER=vulkan exec sway --unsupported-gpu";
+    swayextra = "WLR_RENDERER=vulkan exec sway --unsupported-gpu";
     lx = "l --sort=extension";
     cal = "cal -m";
     du-all = "du -ah --max-depth=1 . | sort -rh";
@@ -129,6 +130,7 @@ yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended 
     kit = "kitten icat";
     bt = "bluetoothctl";
     wpa = "wpa_gui";
+    wlpaste = "wl-paste | nc termbin.com 1866";
   };
 
   # --- NIX SETTINGS ---
@@ -149,9 +151,8 @@ yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended 
   # --- POWER MANAGEMENT ---
   services.logind.extraConfig = ''
     HandlePowerKey=ignore
-    HandleLidSwitch=hibernate
-    IdleAction=hibernate
-    IdleActionSec=15min
+    HandleLidSwitch=ignore
+    IdleAction=ignore
   '';
 
   services.tlp = {
