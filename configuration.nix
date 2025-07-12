@@ -115,11 +115,25 @@ yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended 
   # --- PROGRAMS ---
   programs.firefox.enable = true;
   programs.vim.enable = true;
+ # programs.sway = {
+ # enable = true;
+ # wrapperFeatures.gtk = true;
+ # extraOptions = [ "--unsupported-gpu --config=${./xconfigs/config}"];
+#};
+#sway wrapper
+let
+  swayWrapper = pkgs.writeShellScriptBin "sway-wrapper" ''
+    exec ${pkgs.sway}/bin/sway --unsupported-gpu --config=${toString ./xconfigs/config} "$@"
+  '';
+in {
   programs.sway = {
     enable = true;
-    wrapperFeatures.gtk = true;
+    package = swayWrapper;
+    wrapperFeatures = {
+      gtk = true;
+    };
   };
-  programs.sway.extraOptions = [ "--unsupported-gpu --config=${./xconfigs/config}"];
+}
   programs.bash.shellAliases = {
     swayextra = "WLR_RENDERER=vulkan exec sway --unsupported-gpu";
     lx = "l --sort=extension";
