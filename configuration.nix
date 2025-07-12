@@ -11,8 +11,8 @@
   nixpkgs.config.allowUnfree = true;
   hardware.nvidia.open = true;
   hardware.enableRedistributableFirmware = true;
-#sway environment setting
-  environment.variables.WLR_RENDERER = "vulkan";
+  #  sway environment setting
+environment.variables.WLR_RENDERER = "vulkan";
   system.stateVersion = "25.05";
   networking.hostName = "kac-machine";
 
@@ -62,7 +62,6 @@ git # Version control system for source code management
 gnutar # GNU tar archiving utility, standard for file archiving and compression
 godot # Open source game engine for 2D and 3D game development
 grim # Screenshot utility for Wayland; use with slurp for region selection
-joplin # Note-taking app with Markdown support, no native PDF annotation; Obsidian is more extensible, but Joplin is open source
 kitty # GPU-based terminal emulator, fast and feature-rich; alacritty is a good alternative for speed
 krita # Digital painting and illustration software, great for artists; gimp is better for photo editing
 kdePackages.dolphin
@@ -91,13 +90,12 @@ unoconv # Converts between different office document formats
 vim_configurable # Highly configurable text editor, popular among developers; neovim is a modern alternative
 vscodium # Open source build of Visual Studio Code; vscode (Microsoft) offers more extensions but is proprietary
 waybar
-sway
+logseq
 wofi
 # foot outdated terminal
 emacs
 mpv
 mako
-wl-clipboard
 grim
 brightnessctl
 playerctl
@@ -115,25 +113,15 @@ yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended 
   # --- PROGRAMS ---
   programs.firefox.enable = true;
   programs.vim.enable = true;
- # programs.sway = {
- # enable = true;
- # wrapperFeatures.gtk = true;
- # extraOptions = [ "--unsupported-gpu --config=${./xconfigs/config}"];
-#};
-#sway wrapper
-let
-  swayWrapper = pkgs.writeShellScriptBin "sway-wrapper" ''
-    exec ${pkgs.sway}/bin/sway --unsupported-gpu --config=${toString ./xconfigs/config} "$@"
-  '';
-in {
   programs.sway = {
     enable = true;
-    package = swayWrapper;
-    wrapperFeatures = {
-      gtk = true;
-    };
+    wrapperFeatures.gtk = true;
+    extraOptions = [
+      "--unsupported-gpu"
+      "--config=${./xconfigs/config}"
+    ];
   };
-}
+
   programs.bash.shellAliases = {
     swayextra = "WLR_RENDERER=vulkan exec sway --unsupported-gpu";
     lx = "l --sort=extension";
@@ -144,7 +132,8 @@ in {
     kit = "kitten icat";
     bt = "bluetoothctl";
     wpa = "wpa_gui";
-    wlpaste = "wl-paste | nc termbin.com 1866";
+    #send copy text to website url to send to someone
+    wlpaste = "wl-paste | nc termbin.com 9999";
   };
 
   # --- NIX SETTINGS ---
