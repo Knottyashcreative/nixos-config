@@ -221,12 +221,14 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
+windows.titlebar false
 bar {
     position bottom
-
+    mode hide
+    statusCommand "${pkgs.i3status}/bin/i3status"
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while ~/.config/sway/bar.sh; do sleep 1; done
+   #  status_command while ~/.config/sway/bar.sh; do sleep 1; done
 
     colors {
         statusline #ffffff
