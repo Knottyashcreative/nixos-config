@@ -134,6 +134,8 @@ yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended 
     wpa = "wpa_gui";
     #send copy text to website url to send to someone
     wlpaste = "wl-paste | nc termbin.com 9999";
+    notes = "echo "- Quick note from terminal tag" >> ~/Documents/Logseq/pages/QuickNotes.md"
+
   };
 
   # --- NIX SETTINGS ---
