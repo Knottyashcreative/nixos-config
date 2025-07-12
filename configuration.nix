@@ -29,7 +29,7 @@ environment.variables.WLR_RENDERER = "vulkan";
       userControlled.enable = true;
       allowAuxiliaryImperativeNetworks = true;
     };
-    #interfaces.wlo1.useDHCP = true;
+    interfaces.enp6s0.useDHCP = true;
     interfaces.wlo1.useDHCP = true;
   };
 
