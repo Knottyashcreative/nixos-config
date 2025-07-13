@@ -62,6 +62,7 @@ git # Version control system for source code management
 gnutar # GNU tar archiving utility, standard for file archiving and compression
 godot # Open source game engine for 2D and 3D game development
 grim # Screenshot utility for Wayland; use with slurp for region selection
+i3status
 kitty # GPU-based terminal emulator, fast and feature-rich; alacritty is a good alternative for speed
 krita # Digital painting and illustration software, great for artists; gimp is better for photo editing
 kdePackages.dolphin
