@@ -12,7 +12,7 @@
   hardware.nvidia.open = true;
   hardware.enableRedistributableFirmware = true;
   #  sway environment setting
-environment.variables.WLR_RENDERER = "vulkan";
+#environment.variables.WLR_RENDERER = "vulkan";
   system.stateVersion = "25.05";
   networking.hostName = "kac-machine";
 
@@ -67,6 +67,8 @@ kitty # GPU-based terminal emulator, fast and feature-rich; alacritty is a good 
 krita # Digital painting and illustration software, great for artists; gimp is better for photo editing
 kdePackages.kio-admin #open as admin 
 kdePackages.dolphin
+alsa-utils    # for aplay
+pciutils      # for lspc
 libreoffice # Office suite including word processor, spreadsheet, and presentation tools; ONLYOFFICE is another option with better PDF editing
 lrzip # Long Range ZIP compression tool, good for very large files
 lshw # Hardware lister, provides detailed info about system hardware
@@ -76,6 +78,57 @@ ntfs3g # NTFS filesystem driver for Linux, allows read/write access to NTFS part
 nvtopPackages.full # NVIDIA GPU monitoring tool, useful for performance tracking
 kdePackages.okular  # PDF viewer and annotator, highly recommended for NixOS; top-ranked PDF tool
 pandoc # Document converter supporting multiple formats
+pavucontrol #control sound
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+#Vulkan added as fails to boot into sway unless added on CLI
+#Exec=env WLR_RENDERER=vulkan sway --unsupported-gpu
+#use layout script
+# exec_always --no-startup-id /etc/nixos/xconfigs/startup-layout.sh
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+#set $mod Mod4
+# Home row direction keys, like vim
+#set $left h
+#set $down j
+#set $up k
+#set $right l
+# Your preferred terminal emulator
+#set $term kitty
+# Your preferred application launcher
+#set $menu wmenu-run
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
+#output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+# Start Sway (if not using a display manager)
+# sway --unsupported-gpu &
+### Idle configuration
+#
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Input configuration
 parted # Disk partitioning tool, useful for managing disk partitions
 pcmanfm # Lightweight file manager, good for minimal setups; thunar is another popular choice
 poppler_utils # PDF utilities including text extraction and conversion
@@ -91,6 +144,8 @@ tesseract # OCR (Optical Character Recognition) engine
 translate-shell # Command-line translator using various translation engines
 unoconv # Converts between different office document formats
 vim_configurable # Highly configurable text editor, popular among developers; neovim is a modern alternative
+evince #document viewer as in gnome
+gnome-text-editor # text editor
 vscodium # Open source build of Visual Studio Code; vscode (Microsoft) offers more extensions but is proprietary
 waybar
 logseq
