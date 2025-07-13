@@ -57,14 +57,15 @@ blender
 dmenu # Dynamic menu for X, useful for launching applications; for Wayland, consider wofi or bemenu
 exiftool # Tool to read, write, and edit metadata in image files
 ffmpeg-full # Multimedia framework for video/audio processing and conversion
+#flameshot
 gimp # Open source image editor, alternative to Photoshop; krita is better for digital painting
 git # Version control system for source code management
 gnutar # GNU tar archiving utility, standard for file archiving and compression
 godot # Open source game engine for 2D and 3D game development
 grim # Screenshot utility for Wayland; use with slurp for region selection
-i3status
 kitty # GPU-based terminal emulator, fast and feature-rich; alacritty is a good alternative for speed
 krita # Digital painting and illustration software, great for artists; gimp is better for photo editing
+kdePackages.kio-admin #open as admin 
 kdePackages.dolphin
 libreoffice # Office suite including word processor, spreadsheet, and presentation tools; ONLYOFFICE is another option with better PDF editing
 lrzip # Long Range ZIP compression tool, good for very large files
@@ -79,10 +80,11 @@ parted # Disk partitioning tool, useful for managing disk partitions
 pcmanfm # Lightweight file manager, good for minimal setups; thunar is another popular choice
 poppler_utils # PDF utilities including text extraction and conversion
 psmisc
+pulseaudio
 python313Packages.pymupdf # Python bindings for MuPDF, useful for PDF manipulation
 signal-desktop # Secure messaging app with end-to-end encryption
 slurp # Selection tool for Wayland, often used with grim for screenshots
-spotifyd # Spotify client daemon for playing music; ncspot is a TUI alternative
+spotify # Spotify client daemon for playing music; ncspot is a TUI alternative
 swayidle # Idle management daemon for Sway
 swaylock # Screen locker for Sway window manager
 tesseract # OCR (Optical Character Recognition) engine
