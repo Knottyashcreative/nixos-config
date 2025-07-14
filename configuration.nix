@@ -75,6 +75,8 @@ lrzip # Long Range ZIP compression tool, good for very large files
 lshw # Hardware lister, provides detailed info about system hardware
 mako # Notification daemon for Wayland
 netflix # Streaming service app, for watching movies and TV shows; use web browser for best compatibility
+networkmanagerapplet
+copyq
 ntfs3g # NTFS filesystem driver for Linux, allows read/write access to NTFS partitions
 nvtopPackages.full # NVIDIA GPU monitoring tool, useful for performance tracking
 kdePackages.okular  # PDF viewer and annotator, highly recommended for NixOS; top-ranked PDF tool
@@ -100,6 +102,9 @@ evince #document viewer as in gnome
 gnome-text-editor # text editor
 vscodium # Open source build of Visual Studio Code; vscode (Microsoft) offers more extensions but is proprietary
 waybar
+#autostart
+networkmanagerapplet
+copyq
 logseq
 wofi
 # foot outdated terminal

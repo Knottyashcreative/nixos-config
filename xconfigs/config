@@ -5,6 +5,11 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+#Vulkan added as fails to boot into sway unless added on CLI
+Exec=env WLR_RENDERER=vulkan sway --unsupported-gpu
+#use layout script
+exec_always --no-startup-id /etc/nixos/xconfigs/startup-layout.sh
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -15,9 +20,9 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term foot
+set $term kitty
 # Your preferred application launcher
-set $menu wmenu-run
+set $menu wolfi --show drun
 
 ### Output configuration
 #
@@ -43,17 +48,6 @@ output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_19
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-### Input configuration
-#
-# Example configuration:
-#
-#   input type:touchpad {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
    input type:keyboard {
        xkb_layout "gb"
    }
@@ -203,17 +197,19 @@ bindsym $mod+r mode "resize"
 # Utilities:
 #
     # Special keys to adjust volume via PulseAudio
-    bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
-    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
-    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
-    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+    #bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+    #bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+    #bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    #bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
     # Special keys to adjust brightness via brightnessctl
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    #bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    #bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    #bindsym Print exec grim
 
-#
+#fonts windows titles
+font pango:monospca10
+
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
@@ -231,4 +227,11 @@ bar {
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
+# Floating windows for dialogs
+for_window [window_type="dialog"] floating enable
+
+# Autostart applications
+exec nm-applet --indicator
+exec mako
+exec copyq
 include /etc/sway/config.d/*
