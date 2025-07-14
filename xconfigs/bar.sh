@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+trap "exit" SIGPIPE
 while true; do
   date_formatted=$(TZ='ETC/GMT-1' date '+%F -- %T')
 
