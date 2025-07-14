@@ -12,10 +12,11 @@
   hardware.nvidia.open = true;
   hardware.enableRedistributableFirmware = true;
   #  sway environment setting
-#environment.variables.WLR_RENDERER = "vulkan";
+environment.variables.WLR_RENDERER = "vulkan";
   system.stateVersion = "25.05";
   networking.hostName = "kac-machine";
-
+#maybbbbbbb
+# hardware.enableRedistributableFirmware = true;
 #systemd.network.enable = true; ***this was recommened by boot up app as confusing
   services.resolved.enable = true;
 
@@ -79,56 +80,7 @@ nvtopPackages.full # NVIDIA GPU monitoring tool, useful for performance tracking
 kdePackages.okular  # PDF viewer and annotator, highly recommended for NixOS; top-ranked PDF tool
 pandoc # Document converter supporting multiple formats
 pavucontrol #control sound
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-#Vulkan added as fails to boot into sway unless added on CLI
-#Exec=env WLR_RENDERER=vulkan sway --unsupported-gpu
-#use layout script
-# exec_always --no-startup-id /etc/nixos/xconfigs/startup-layout.sh
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
-#set $mod Mod4
-# Home row direction keys, like vim
-#set $left h
-#set $down j
-#set $up k
-#set $right l
-# Your preferred terminal emulator
-#set $term kitty
-# Your preferred application launcher
-#set $menu wmenu-run
-
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
-#output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-# Start Sway (if not using a display manager)
-# sway --unsupported-gpu &
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
-### Input configuration
+## Input configuration
 parted # Disk partitioning tool, useful for managing disk partitions
 pcmanfm # Lightweight file manager, good for minimal setups; thunar is another popular choice
 poppler_utils # PDF utilities including text extraction and conversion
@@ -154,7 +106,7 @@ wofi
 emacs
 mpv
 mako
-grim
+grim #screenshot with slurp
 brightnessctl
 playerctl
 wf-recorder # Wayland screen recorder
@@ -170,7 +122,6 @@ yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended 
 
   # --- PROGRAMS ---
   programs.firefox.enable = true;
-  programs.vim.enable = true;
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
