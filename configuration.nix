@@ -97,7 +97,8 @@ swaylock # Screen locker for Sway window manager
 tesseract # OCR (Optical Character Recognition) engine
 translate-shell # Command-line translator using various translation engines
 unoconv # Converts between different office document formats
-vim_configurable # Highly configurable text editor, popular among developers; neovim is a modern alternative
+vim # Highly configurable text editor, popular among developers; neovim is a modern alternative
+vimPlugins.vim-wayland-clipboard
 evince #document viewer as in gnome
 gnome-text-editor # text editor
 vscodium # Open source build of Visual Studio Code; vscode (Microsoft) offers more extensions but is proprietary
