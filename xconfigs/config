@@ -5,11 +5,11 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-#Vulkan added as fails to boot into sway unless added on CLI
-Exec=env WLR_RENDERER=vulkan sway --unsupported-gpu
-#use layout script
+# Vulkan added as fails to boot into sway unless added on CLI
+# exec env WLR_RENDERER=vulkan sway --unsupported-gpu
+# use layout script
 exec_always --no-startup-id /etc/nixos/xconfigs/startup-layout.sh
-
+exec sway --unsupported-gpu
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -66,7 +66,7 @@ output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_19
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d exec $menu wolfi
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -202,13 +202,13 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
     bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
     # Special keys to adjust brightness via brightnessctl
-    #bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-    #bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    # bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    # bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
     bindsym Print exec grim
 
-#fonts windows titles
-#font pango:monospca10
+# fonts windows titles
+# font pango:monospca10
 
 # Status Bar:
 #
