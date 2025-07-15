@@ -136,6 +136,8 @@ yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended 
       "--config=${./xconfigs/config}"
     ];
   };
+services.unifi.enable = true;
+services.unifi.openFirewall = true;
 
   programs.bash.shellAliases = {
     swayextra = "WLR_RENDERER=vulkan exec sway --unsupported-gpu";
