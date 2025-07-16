@@ -120,7 +120,8 @@ wget # Command-line utility for downloading files from the web; aria2 is more po
 wpa_supplicant_gui
 whatsapp-for-linux # Unofficial WhatsApp client for Linux; use web.whatsapp.com in browser for official support
 wireshark # Network protocol analyzer for troubleshooting and analysis
-wl-clipboard # Clipboard utilities for Wayland
+wl-clipboard-rs # Clipboard utilities for Wayland
+wofi-emoji
 xz # Compression tool using LZMA2 algorithm, efficient for large files
 yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended for modern sites
     (inkscape-with-extensions.override { inkscapeExtensions = [ inkscape-extensions.inkstitch ]; })
@@ -138,6 +139,8 @@ yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended 
   };
 services.unifi.enable = true;
 services.unifi.openFirewall = true;
+services.unifi.openPorts = true;
+
 
   programs.bash.shellAliases = {
     swayextra = "WLR_RENDERER=vulkan exec sway --unsupported-gpu";
