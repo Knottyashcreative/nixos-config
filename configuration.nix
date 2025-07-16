@@ -133,7 +133,7 @@ yt-dlp # YouTube downloader with many features; fork of youtube-dl, recommended 
     enable = true;
     wrapperFeatures.gtk = true;
     extraOptions = [
-      "--unsupported-gpu"
+     # "--unsupported-gpu"
       "--config=${./xconfigs/config}"
     ];
   };

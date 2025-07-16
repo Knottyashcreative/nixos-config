@@ -8,7 +8,8 @@
 # Vulkan added as fails to boot into sway unless added on CLI
 # exec env WLR_RENDERER=vulkan sway --unsupported-gpu
 # use layout script
-exec sway --unsupported-gpu
+#Exec sway --unsupported-gpu
+# exec env WLR_RENDERER=vulkan sway --unsupported-gpu
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
