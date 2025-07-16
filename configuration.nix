@@ -151,6 +151,8 @@ services.unifi.openPorts = true;
     du-files = "find . -maxdepth 1 -type f -exec du -h {} + | sort -rh";
     kit = "kitten icat";
     bt = "bluetoothctl";
+    timer = "alarmm";
+    time = "alarmt";
     wpa = "wpa_gui";
     #send copy text to website url to send to someone
     wlpaste = "wl-paste | nc termbin.com 9999";
