@@ -10,6 +10,7 @@
   services.open-webui = {
     enable = true;
     host = "0.0.0.0";
+    port = 3000; #added today 16/7/25
     environment = {
       OLLAMA_API_BASE_URL = "http://${config.services.ollama.host}:${toString config.services.ollama.port}";
       WEBUI_AUTH = "False";
