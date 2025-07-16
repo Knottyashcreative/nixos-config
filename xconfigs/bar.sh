@@ -1,11 +1,21 @@
 #!/usr/bin/env bash
 trap "exit" SIGPIPE
 while true; do
-  date_formatted=$(TZ='ETC/GMT-1' date '+%F -- %T')
+  #option 1
+  #date_formatted=$(TZ='ETC/GMT-1' date '+%F -- %T')
+
+  date_formatted=$(TZ='Europe/London' date '%H:%M:%S -- +%d/%m/%Y')
 
   cpu_usage=$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4 "%"}')
   mem_usage=$(free -h | awk '/^Mem/ {print $3 "/" $2}')
-  ip_addr=$(ip -4 addr show wlan0 2>/dev/null | grep inet | awk '{print $2}' | cut -d/ -f1)
+  # option 1
+  # ip_addr=$(ip -4 addr show wlan0 2>/dev/null | grep inet | awk '{print $2}' | cut -d/ -f1)
+
+ip_addr=$(ip -4 addr show wlan0 2>/dev/null | grep inet | awk '{print $2}' | cut -d/ -f1)
+ip_addr=${ip_addr:-$(ip -4 addr show eth0 2>/dev/null | grep inet | awk '{print $2}' | cut -d/ -f1)}
+
+echo "IP address: $ip_addr"
+
 
   # WiFi strength: fallback to empty if not available
   wifi_strength=""
@@ -27,6 +37,7 @@ while true; do
   music=""
 
   echo "📆 $date_formatted | 🖥️ CPU: $cpu_usage | 🧠 Mem: $mem_usage | 🌐 IP: $ip_addr | 📶 WiFi: $wifi_strength | 🔊 Vol: $volume | ⏱️ $uptime | 💾 Disk: $disk_usage | 🎵 $music"
+  
   sleep 1
 done
 
