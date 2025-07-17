@@ -1,7 +1,11 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./open-webui.nix ./comfyui ];
+  imports = [ 
+     ./open-webui.nix 
+     ./comfyui 
+     ./bash.nix
+  ];
 
   services.ollama = {
     host = "0.0.0.0";
@@ -88,6 +92,7 @@ vimPlugins.cmp-path
 vimPlugins.vim-oscyank
 vimPlugins.gitsigns-nvim
 kdePackages.okular  # PDF viewer and annotator, highly recommended for NixOS; top-ranked PDF tool
+lsof #list items off
 pandoc # Document converter supporting multiple formats
 pavucontrol #control sound
 ## Input configuration
@@ -150,29 +155,6 @@ services.unifi.openFirewall = true;
 services.unifi.openPorts = true;
 
 
-  programs.bash.shellAliases = {
-    swayextra = "WLR_RENDERER=vulkan exec sway --unsupported-gpu";
-    lx = "l --sort=extension";
-    cal = "cal -m";
-    du-all = "du -ah --max-depth=1 . | sort -rh";
-    du-dir = "du -h --max-depth=1 . | sort -rh";
-    du-files = "find . -maxdepth 1 -type f -exec du -h {} + | sort -rh";
-    kit = "kitten icat";
-    bt = "bluetoothctl";
-    alarmm = "~/script/alarmm.sh";
-    alarmt = "~/script/alarmt.sh";
-    alarmme = "nvim ~/script/alarmm.sh";
-    alarmte = "nvim ~/script/alarmt.sh";
-    wpa = "wpa_gui";
-    nixoss = "cd /etc/nixos/";
-    xconfigss = "cd xconfigs/";
-    configs = "nvim /etc/nixos/config";
-    configurations = "nvim /etc/nixos/configuration.nix";
-    bars = "nvim /etc/nixos/xconfigs/bar.sh";
-
-    #send copy text to website url to send to someone
-    wlpaste = "wl-paste | nc termbin.com 9999";
-  };
 
   # --- NIX SETTINGS ---
   nix.package = pkgs.nixVersions.latest;
