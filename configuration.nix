@@ -54,6 +54,7 @@ environment.variables.WLR_RENDERER = "vulkan";
 alacritty # GPU-accelerated terminal emulator, fast and modern; kitty is also highly ranked for advanced features
 aria2 # Lightweight multi-protocol & multi-source command-line download utility
 btop # Resource monitor with a graphical interface, shows system stats
+bat
 blender
 dmenu # Dynamic menu for X, useful for launching applications; for Wayland, consider wofi or bemenu
 exiftool # Tool to read, write, and edit metadata in image files
