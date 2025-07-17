@@ -159,9 +159,17 @@ services.unifi.openPorts = true;
     du-files = "find . -maxdepth 1 -type f -exec du -h {} + | sort -rh";
     kit = "kitten icat";
     bt = "bluetoothctl";
-    timer = "alarmm";
-    time = "alarmt";
+    alarmm = "~/script/alarmm.sh";
+    alarmt = "~/script/alarmt.sh";
+    alarmme = "nvim ~/script/alarmm.sh";
+    alarmte = "nvim ~/script/alarmt.sh";
     wpa = "wpa_gui";
+    nixoss = "cd /etc/nixos/";
+    xconfigss = "cd xconfigs/";
+    configs = "nvim /etc/nixos/config";
+    configurations = "nvim /etc/nixos/configuration.nix";
+    bars = "nvim /etc/nixos/xconfigs/bar.sh";
+
     #send copy text to website url to send to someone
     wlpaste = "wl-paste | nc termbin.com 9999";
   };
