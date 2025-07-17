@@ -79,6 +79,13 @@ networkmanagerapplet
 copyq
 ntfs3g # NTFS filesystem driver for Linux, allows read/write access to NTFS partitions
 nvtopPackages.full # NVIDIA GPU monitoring tool, useful for performance tracking
+neovim
+vimPlugins.vim-nix
+vimPlugins.nvim-cmp
+vimPlugins.cmp-nvim-lsp
+vimPlugins.cmp-path
+vimPlugins.vim-oscyank
+vimPlugins.gitsigns-nvim
 kdePackages.okular  # PDF viewer and annotator, highly recommended for NixOS; top-ranked PDF tool
 pandoc # Document converter supporting multiple formats
 pavucontrol #control sound

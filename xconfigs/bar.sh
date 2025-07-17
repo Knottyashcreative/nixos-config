@@ -4,7 +4,7 @@ while true; do
   #option 1
   #date_formatted=$(TZ='ETC/GMT-1' date '+%F -- %T')
 
-  date_formatted=$(TZ='Europe/London' date '%H:%M:%S -- +%d/%m/%Y')
+  date_formatted=$(TZ='Europe/London' date '+%H:%M:%S -- %d/%m/%Y')
 
   cpu_usage=$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4 "%"}')
   mem_usage=$(free -h | awk '/^Mem/ {print $3 "/" $2}')
